@@ -107,7 +107,7 @@ function addRole() {
       },
       {
         type: "input",
-        message: "Name of department that role is in:",
+        message: "Department ID that role is in:",
         name: "RoleDepartment",
       },
     ])
@@ -121,28 +121,51 @@ function addRole() {
     });
 }
 
-function addEmployee() {}
+// function addEmployee() {
+//   inquirer
+//   .prompt([
+//     {
+//       type: "input",
+//       message: "What is the employees first name?",
+//       name: "employeeFirstName",
+//     },
+//     {
+//       type: "input",
+//       message: "What is the employees last name?",
+//       name: "employeeLastName",
+//     },
+//     {
+//       type: "list",
+//       message: "What is the employees role?",
+//       name: "roleOptions",
+//       choices: [
 
-function updateEmployee() {
-  inquirer
-    .prompt([
-      {
-        type: "input",
-        message: "What is the employee id that you'd like to update?",
-        name: "employeeID",
-      },
-      {
-        type: "input",
-        message: "What is the employees new role id",
-        name: "employeeRole",
-      },
-    ])
-    .then((response) => {
-      db.query(
-        `UPDATE employee SET role_id = ${response.employeeRole} WHERE id = ${response.employeeID}`
-      ),
-        (err, data) => {
-          viewEmployees();
-        };
-    });
-}
+//       ]
+
+//     }
+//   ])
+// }
+
+// function updateEmployee() {
+//   inquirer
+//     .prompt([
+//       {
+//         type: "input",
+//         message: "What is the employee id that you'd like to update?",
+//         name: "employeeID",
+//       },
+//       {
+//         type: "input",
+//         message: "What is the employees new role id",
+//         name: "employeeRole",
+//       },
+//     ])
+//     .then((response) => {
+//       db.query(
+//         `UPDATE employee SET role_id = ${response.employeeRole} WHERE id = ${response.employeeID}`
+//       ),
+//         (err, data) => {
+//           viewEmployees();
+//         };
+//     });
+// }
